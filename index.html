@@ -83,7 +83,7 @@ function Header() {
       <div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-2">
         <a href="#topo" aria-label="Casa da Pizza Petrópolis"><Logo className="h-12" /></a>
         <nav className="hidden md:flex gap-6 font-d font-bold text-pz-b">
-          <a href="#promocoes" className="hover:text-pz-r">Promoções</a>
+          <a href="#unidades" className="hover:text-pz-r">Unidades</a>
           <a href="#sobre" className="hover:text-pz-r">Sobre</a>
           <a href="#contato" className="hover:text-pz-r">Contato</a>
         </nav>
@@ -171,7 +171,7 @@ function Hero() {
 }
 
 function About() {
-  const items = [["1", "Escolha a promoção", "Toque em uma oferta do banner e o cardápio da loja abre direto no site de pedidos."], ["2", "Monte o pedido", "Sabores, bordas e bebidas ficam no cardápio completo, sempre atualizado pela loja."], ["3", "Receba em casa", "Delivery em Manaus, saindo da unidade do Petrópolis."]];
+  const items = [["1", "Escolha sua unidade", "Toque no card da unidade mais próxima do seu bairro para abrir o cardápio certo."], ["2", "Monte o pedido", "Sabores, bordas e bebidas ficam no cardápio completo, sempre atualizado pela loja."], ["3", "Receba em casa", "Delivery rápido em Manaus, saindo da unidade mais próxima de você."]];
   return (
     <section id="sobre" className="bg-gray-50 py-16 scroll-mt-20">
       <div className="max-w-6xl mx-auto px-4">
@@ -240,21 +240,21 @@ function Footer() {
       <div className="max-w-6xl mx-auto px-4 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <div className="inline-block bg-white rounded-2xl p-3"><Logo className="h-24" /></div>
-          <p className="mt-4 text-white/80">Unidade Petrópolis, Manaus – AM. Pizza com delivery e promoções todos os dias no site de pedidos.</p>
+          <p className="mt-4 text-white/80">6 unidades em Manaus – AM. Escolha a mais próxima de você e peça online.</p>
         </div>
         <div>
-          <h3 className={h}>Navegue</h3>
-          <a className={a} href="#promocoes">Promoções</a>
+          <h3 className={h}>Unidades</h3>
+          {UNITS.map((u) => (
+            <a key={u.id} className={a} href="#unidades">{u.name}</a>
+          ))}
+        </div>
+        <div>
+          <h3 className={h}>Navegue & Atendimento</h3>
+          <a className={a} href="#unidades">Escolher unidade</a>
           <a className={a} href="#sobre">Como pedir</a>
-          <a className={a} href="#contato">Endereço e contato</a>
           <a className={a} href={LINK} target="_blank" rel="noopener">Cardápio e pedidos</a>
-        </div>
-        <div>
-          <h3 className={h}>SAC e endereço</h3>
-          <p className="text-sm text-white/70">SAC / atendimento</p>
-          <a href={"tel:+55" + TEL} className="font-d font-extrabold text-3xl text-white hover:text-pz-y transition">92 98506-6702</a>
-          <p className="mt-4 text-white/80">Rua Benjamin Constant, 849<br />Petrópolis – Manaus – AM</p>
-          <a href={MAPS} target="_blank" rel="noopener" className="inline-block mt-2 text-pz-y font-bold underline">Abrir no Google Maps</a>
+          <p className="mt-4 text-xs text-white/60">Atendimento / WhatsApp</p>
+          <a href={"tel:+55" + TEL} className="inline-block text-base font-bold text-white/85 hover:text-pz-y transition">92 98506-6702</a>
         </div>
         <div>
           <h3 className={h}>Redes sociais</h3>
@@ -269,7 +269,7 @@ function Footer() {
         </div>
       </div>
       <div className="max-w-6xl mx-auto px-4 mt-12 pt-6 border-t border-white/15 flex flex-col sm:flex-row gap-2 justify-between text-sm text-white/70">
-        <p>© 2026 Casa da Pizza – Petrópolis, Manaus/AM. Todos os direitos reservados.</p>
+        <p>© 2026 Casa da Pizza – Manaus/AM. Todos os direitos reservados.</p>
         <a href={LINK} target="_blank" rel="noopener" className="font-bold text-pz-y hover:underline">Peça online: casadapizzadelivery.saipos.com</a>
       </div>
       <a href={LINK} target="_blank" rel="noopener" className="fixed right-4 bottom-4 z-40 bg-pz-r text-white font-d font-bold rounded-full px-6 py-3 shadow-xl pulse2 hover:scale-105 transition" style={{ marginBottom: "env(safe-area-inset-bottom,0px)" }}>🍕 Pedir agora</a>
@@ -277,10 +277,98 @@ function Footer() {
   );
 }
 
+const UNITS = [
+  { id: "zona-leste", name: "ZONA LESTE", tag: "Molho de Tomate", emoji: "🍅", bg: "from-[#D62828] to-[#9E1B1B]", fg: "text-white", pill: "bg-white text-[#D62828]" },
+  { id: "petropolis", name: "ZONA SUL - PETRÓPOLIS", tag: "Queijo Mussarela", emoji: "🧀", bg: "from-[#FFD500] to-[#F5B700]", fg: "text-[#3B1D08]", pill: "bg-[#3B1D08] text-[#FFD500]" },
+  { id: "monte-oliveiras", name: "MONTE DAS OLIVEIRAS", tag: "Manjericão & Azeitona", emoji: "🌿", bg: "from-[#2E7D32] to-[#1B5E20]", fg: "text-white", pill: "bg-white text-[#1B5E20]" },
+  { id: "dom-pedro", name: "DOM PEDRO", tag: "Borda Cheddar", emoji: "🧡", bg: "from-[#F59E0B] to-[#D97706]", fg: "text-[#3B1D08]", pill: "bg-[#3B1D08] text-[#FFD500]" },
+  { id: "novo-israel", name: "CENTRAL - NOVO ISRAEL", tag: "Massa Assada no Forno", emoji: "🔥", bg: "from-[#8B4513] to-[#5A2909]", fg: "text-[#FFF8DC]", pill: "bg-[#FFD500] text-[#3B1D08]" },
+  { id: "sumauma", name: "SÚMAUMA", tag: "Pepperoni Especial", emoji: "🍕", bg: "from-[#C2410C] to-[#8C2D06]", fg: "text-white", pill: "bg-white text-[#C2410C]" },
+];
+
+function UnitsSection() {
+  const [selected, setSelected] = useState(null);
+  const [toast, setToast] = useState("");
+
+  const handleSelect = (u) => {
+    setSelected(u.id);
+    setToast(`${u.name} selecionada! (link da unidade será adicionado em breve)`);
+  };
+
+  useEffect(() => {
+    if (!toast) return;
+    const t = setTimeout(() => setToast(""), 3000);
+    return () => clearTimeout(t);
+  }, [toast]);
+
+  return (
+    <section id="topo" className="bg-white pt-10 pb-16">
+      <div id="unidades" className="max-w-6xl mx-auto px-4 scroll-mt-24">
+        <div className="text-center mb-10 up">
+          <span className="inline-block bg-pz-y/30 text-pz-b font-d font-extrabold text-sm px-4 py-1 rounded-full border border-pz-y">
+            🍕 Nossas 6 Unidades em Manaus
+          </span>
+          <h1 className="font-d font-extrabold text-pz-b text-3xl sm:text-5xl mt-3">
+            Escolha a <span className="text-pz-r">Casa da Pizza</span> mais próxima
+          </h1>
+          <p className="mt-2 text-lg text-gray-600">
+            Selecione sua região abaixo para acessar o cardápio e fazer seu pedido.
+          </p>
+        </div>
+
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+          {UNITS.map((u, idx) => {
+            const isSel = selected === u.id;
+            return (
+              <Reveal key={u.id} delay={idx * 80} className="h-full">
+                <button
+                  type="button"
+                  onClick={() => handleSelect(u)}
+                  className={
+                    "w-full h-full text-left relative overflow-hidden rounded-3xl p-7 bg-gradient-to-br " +
+                    u.bg + " " + u.fg +
+                    " shadow-[0_20px_40px_-15px_rgba(59,29,8,0.35)] hover:shadow-[0_26px_50px_-12px_rgba(59,29,8,0.45)] " +
+                    "transition-all duration-300 hover:-translate-y-2 active:scale-95 flex flex-col justify-between min-h-[210px] group " +
+                    (isSel ? "ring-4 ring-offset-4 ring-pz-r" : "")
+                  }
+                >
+                  <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-white/15 group-hover:scale-110 transition-transform duration-500" />
+                  <div className="absolute right-5 top-5 text-3xl opacity-90 float">{u.emoji}</div>
+
+                  <div className="relative pr-10">
+                    <span className="inline-block bg-black/15 backdrop-blur-sm font-d font-bold text-xs px-3 py-1 rounded-full">
+                      {u.tag}
+                    </span>
+                    <h2 className="font-d font-extrabold text-2xl sm:text-3xl leading-tight mt-3">
+                      {u.name}
+                    </h2>
+                  </div>
+
+                  <div className="relative mt-6 flex items-center justify-between">
+                    <span className={"inline-flex items-center gap-1.5 font-d font-bold text-sm px-4 py-2 rounded-full shadow-md transition " + u.pill}>
+                      {isSel ? "✓ Unidade selecionada" : "Escolher unidade →"}
+                    </span>
+                  </div>
+                </button>
+              </Reveal>
+            );
+          })}
+        </div>
+
+        {toast && (
+          <div className="fixed left-1/2 -translate-x-1/2 bottom-20 sm:bottom-6 z-50 px-5 py-3 rounded-full bg-pz-b text-pz-y font-d font-bold text-sm shadow-2xl border-2 border-pz-y up whitespace-nowrap max-w-[92vw] truncate">
+            🍕 {toast}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
 function App() {
   const [done, setDone] = useState(false);
   useEffect(() => { const t = setTimeout(() => setDone(true), 2000); return () => clearTimeout(t); }, []);
-  return (<><Loader done={done} /><Header /><main><Hero /><About /><Contact /></main><Footer /></>);
+  return (<><Loader done={done} /><Header /><main><UnitsSection /><About /></main><Footer /></>);
 }
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
 </script>
