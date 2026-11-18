@@ -57,7 +57,7 @@ function Loader({ done }) {
       <div className="mt-8 w-48 h-2 bg-pz-y/40 rounded-full overflow-hidden">
         <div className="h-full bg-pz-r rounded-full" style={{ animation: "bar 2s linear forwards" }} />
       </div>
-      <p className="mt-3 font-d text-pz-b font-bold">Preparando sua pizza…</p>
+      <p className="mt-3 font-d text-pz-b font-bold">Carregando</p>
     </div>
   );
 }
@@ -161,7 +161,7 @@ function Hero() {
     <section id="topo" className="bg-white">
       <div className="max-w-6xl mx-auto px-4 pt-8 pb-10">
         <div className="text-center mb-6 up">
-          <h1 className="font-d font-extrabold text-pz-b text-3xl sm:text-5xl">Casa da Pizza, <span className="text-pz-r">unidade Petrópolis</span></h1>
+          <h1 className="font-d font-extrabold text-pz-b text-3xl sm:text-5xl">Central, <span className="text-pz-r"> - Novo Israel</span></h1>
           <p className="mt-2 text-lg text-gray-600">Escolha uma promoção e faça o pedido pelo site, sem ligar nem esperar.</p>
         </div>
         <Banner />
@@ -278,11 +278,11 @@ function Footer() {
 }
 
 const UNITS = [
+  { id: "novo-israel", name: "CENTRAL - NOVO ISRAEL", tag: "Massa Assada no Forno", emoji: "🔥", bg: "from-[#8B4513] to-[#5A2909]", fg: "text-[#FFF8DC]", pill: "bg-[#FFD500] text-[#3B1D08]" },
   { id: "zona-leste", name: "ZONA LESTE", tag: "Molho de Tomate", emoji: "🍅", bg: "from-[#D62828] to-[#9E1B1B]", fg: "text-white", pill: "bg-white text-[#D62828]" },
   { id: "petropolis", name: "ZONA SUL - PETRÓPOLIS", tag: "Queijo Mussarela", emoji: "🧀", bg: "from-[#FFD500] to-[#F5B700]", fg: "text-[#3B1D08]", pill: "bg-[#3B1D08] text-[#FFD500]" },
   { id: "monte-oliveiras", name: "MONTE DAS OLIVEIRAS", tag: "Manjericão & Azeitona", emoji: "🌿", bg: "from-[#2E7D32] to-[#1B5E20]", fg: "text-white", pill: "bg-white text-[#1B5E20]" },
   { id: "dom-pedro", name: "DOM PEDRO", tag: "Borda Cheddar", emoji: "🧡", bg: "from-[#F59E0B] to-[#D97706]", fg: "text-[#3B1D08]", pill: "bg-[#3B1D08] text-[#FFD500]" },
-  { id: "novo-israel", name: "CENTRAL - NOVO ISRAEL", tag: "Massa Assada no Forno", emoji: "🔥", bg: "from-[#8B4513] to-[#5A2909]", fg: "text-[#FFF8DC]", pill: "bg-[#FFD500] text-[#3B1D08]" },
   { id: "sumauma", name: "SÚMAUMA", tag: "Pepperoni Especial", emoji: "🍕", bg: "from-[#C2410C] to-[#8C2D06]", fg: "text-white", pill: "bg-white text-[#C2410C]" },
 ];
 
