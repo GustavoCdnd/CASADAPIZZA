@@ -282,81 +282,63 @@ const whatsappLink = (phone) => `https://wa.me/55${phone}?text=${encodeURICompon
 
 const UNITS = [
   {
-    id: "novo-israel",
-    name: "CENTRAL - NOVO ISRAEL",
-    tag: "Rua Estrela de Davi nº 156, Novo Israel",
-    emoji: "🔥",
-    href: "https://casadapizzadelivery.saipos.com/casa-da-pizza",
-    bg: "from-[#FFD500] to-[#F2B900]",
-    fg: "text-[#3B1D08]",
-    pill: "bg-[#3B1D08] text-[#FFD500]"
+    id: "novo-israel", name: "CENTRAL - NOVO ISRAEL", tag: "Rua Estrela de Davi nº 156, Novo Israel", emoji: "🔥",
+    actions: [
+      { label: "Cardápio aqui", href: "https://casadapizzadelivery.saipos.com/casa-da-pizza", kind: "menu" },
+      { label: "WhatsApp", href: whatsappLink("92985066702"), kind: "whatsapp" }
+    ],
+    bg: "from-[#FFD500] to-[#F2B900]", fg: "text-[#3B1D08]", pill: "bg-[#3B1D08] text-[#FFD500]"
   },
   {
-    id: "zona-leste",
-    name: "ZONA LESTE",
-    tag: "Alameda Alphaville, nº 13 - Tancredo Neves",
-    emoji: "🍅",
-    href: "https://casadapizzadelivery.saipos.com/casa-da-pizza-zona-leste",
-    bg: "from-[#D62828] to-[#9E1B1B]",
-    fg: "text-white",
-    pill: "bg-white text-[#D62828]"
+    id: "zona-leste", name: "ZONA LESTE", tag: "Alameda Alphaville, nº 13 - Tancredo Neves", emoji: "🍅",
+    actions: [
+      { label: "Cardápio aqui", href: "https://casadapizzadelivery.saipos.com/casa-da-pizza-zona-leste", kind: "menu" },
+      { label: "WhatsApp", href: whatsappLink("92986365035"), kind: "whatsapp" }
+    ],
+    bg: "from-[#D62828] to-[#9E1B1B]", fg: "text-white", pill: "bg-white text-[#D62828]"
   },
   {
-    id: "petropolis",
-    name: "ZONA SUL - PETRÓPOLIS",
-    tag: "Rua Benjamin Constant nº 845 - Petrópolis",
-    emoji: "🧀",
-    href: "https://casadapizzadelivery.saipos.com/casa-da-pizza-petropolis",
-    bg: "from-[#FFFFFF] to-[#EDEDED]",
-    fg: "text-[#292929]",
-    pill: "bg-[#292929] text-white"
+    id: "petropolis", name: "ZONA SUL - PETRÓPOLIS", tag: "Rua Benjamin Constant nº 845 - Petrópolis", emoji: "🧀",
+    actions: [
+      { label: "Cardápio aqui", href: "https://casadapizzadelivery.saipos.com/casa-da-pizza-petropolis", kind: "menu" },
+      { label: "WhatsApp", href: whatsappLink("92985470916"), kind: "whatsapp" }
+    ],
+    bg: "from-[#FFFFFF] to-[#EDEDED]", fg: "text-[#292929]", pill: "bg-[#292929] text-white"
   },
   {
-    id: "monte-oliveiras",
-    name: "MONTE DAS OLIVEIRAS",
-    tag: "Rua Jureuena nº 32 - Monte das Oliveiras",
-    emoji: "🌿",
-    href: whatsappLink("92994639744"),
-    bg: "from-[#F97316] to-[#C2410C]",
-    fg: "text-white",
-    pill: "bg-white text-[#C2410C]"
+    id: "monte-oliveiras", name: "MONTE DAS OLIVEIRAS", tag: "Rua Jureuena nº 32 - Monte das Oliveiras", emoji: "🌿",
+    actions: [
+      { label: "Cardápio aqui", href: "https://pedir.delivery/app/casadapizzamanaus/menu", kind: "menu" },
+      { label: "WhatsApp", href: whatsappLink("92994639744"), kind: "whatsapp" }
+    ],
+    bg: "from-[#F97316] to-[#C2410C]", fg: "text-white", pill: "bg-white text-[#C2410C]"
   },
   {
-    id: "dom-pedro",
-    name: "DOM PEDRO",
-    tag: "Rua Jufari",
-    emoji: "📍",
-    href: whatsappLink("92981143945"),
-    bg: "from-[#9CA3AF] to-[#4B5563]",
-    fg: "text-white",
-    pill: "bg-white text-[#374151]"
+    id: "dom-pedro", name: "DOM PEDRO", tag: "Rua Jufari", emoji: "📍",
+    actions: [
+      { label: "WhatsApp", href: whatsappLink("92981143945"), kind: "whatsapp" },
+      { label: "iFood", href: "https://www.ifood.com.br/delivery/manaus-am/pizzaria-casa-da-pizza---sao-jorge-nova-esperanca/4565dc21-b893-4130-a582-85fbc938b903?utm_medium=share", kind: "ifood" }
+    ],
+    bg: "from-[#9CA3AF] to-[#4B5563]", fg: "text-white", pill: "bg-white text-[#374151]"
   },
   {
-    id: "sumauma",
-    name: "SÚMAUMA",
-    tag: "Rua Beija Flor nº 279 - Sumaúma",
-    emoji: "🍕",
-    href: whatsappLink("92984091787"),
-    bg: "from-[#333333] to-[#000000]",
-    fg: "text-white",
-    pill: "bg-white text-[#111111]"
+    id: "sumauma", name: "SÚMAUMA", tag: "Rua Beija Flor nº 279 - Sumaúma", emoji: "🍕",
+    actions: [
+      { label: "99Food", href: "https://oia.99app.com/dlp9/8mx4pR", kind: "99food" },
+      { label: "iFood", href: "https://www.ifood.com.br/delivery/manaus-am/pizzaria-casa-da-pizza---sumauma-nova-cidade/940fa137-ed58-49fc-9258-7563c5b84078?utm_medium=share", kind: "ifood" }
+    ],
+    bg: "from-[#333333] to-[#000000]", fg: "text-white", pill: "bg-white text-[#111111]"
   },
 ];
 
 function UnitsSection() {
   const [selected, setSelected] = useState(null);
-  const [toast, setToast] = useState("");
-
-  const handleSelect = (u) => {
-    setSelected(u.id);
-    window.open(u.href, "_blank", "noopener,noreferrer");
+  const actionStyle = (kind, u) => {
+    if (kind === "whatsapp") return "bg-[#16A34A] text-white hover:bg-[#15803D]";
+    if (kind === "ifood") return "bg-[#EA1D2C] text-white hover:bg-[#C81724]";
+    if (kind === "99food") return "bg-[#F5D000] text-[#222222] hover:bg-[#E2C000]";
+    return u.pill + " hover:opacity-90";
   };
-
-  useEffect(() => {
-    if (!toast) return;
-    const t = setTimeout(() => setToast(""), 3000);
-    return () => clearTimeout(t);
-  }, [toast]);
 
   return (
     <section id="topo" className="bg-white pt-10 pb-16">
@@ -374,49 +356,37 @@ function UnitsSection() {
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
-          {UNITS.map((u, idx) => {
-            const isSel = selected === u.id;
-            return (
-              <Reveal key={u.id} delay={idx * 80} className="h-full">
-                <button
-                  type="button"
-                  onClick={() => handleSelect(u)}
-                  className={
-                    "w-full h-full text-left relative overflow-hidden rounded-3xl border border-black/10 p-7 bg-gradient-to-br " +
-                    u.bg + " " + u.fg +
-                    " shadow-[0_20px_40px_-15px_rgba(59,29,8,0.35)] hover:shadow-[0_26px_50px_-12px_rgba(59,29,8,0.45)] " +
-                    "transition-all duration-300 hover:-translate-y-2 active:scale-95 flex flex-col justify-between min-h-[210px] group " +
-                    (isSel ? "ring-4 ring-offset-4 ring-pz-r" : "")
-                  }
-                >
-                  <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-white/15 group-hover:scale-110 transition-transform duration-500" />
-                  <div className="absolute right-5 top-5 text-3xl opacity-90 float">{u.emoji}</div>
+          {UNITS.map((u, idx) => (
+            <Reveal key={u.id} delay={idx * 80} className="h-full">
+              <div className={
+                "w-full h-full text-left relative overflow-hidden rounded-3xl border border-black/10 p-7 bg-gradient-to-br " +
+                u.bg + " " + u.fg +
+                " shadow-[0_20px_40px_-15px_rgba(59,29,8,0.35)] hover:shadow-[0_26px_50px_-12px_rgba(59,29,8,0.45)] " +
+                "transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between min-h-[230px] group"
+              }>
+                <div className="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-white/15 group-hover:scale-110 transition-transform duration-500 pointer-events-none" />
+                <div className="absolute right-5 top-5 text-3xl opacity-90 float pointer-events-none">{u.emoji}</div>
 
-                  <div className="relative pr-10">
-                    <span className="inline-block bg-black/15 backdrop-blur-sm font-d font-bold text-xs px-3 py-1 rounded-full">
-                      {u.tag}
-                    </span>
-                    <h2 className="font-d font-extrabold text-2xl sm:text-3xl leading-tight mt-3">
-                      {u.name}
-                    </h2>
-                  </div>
+                <div className="relative pr-10">
+                  <span className="inline-block bg-black/15 backdrop-blur-sm font-d font-bold text-xs px-3 py-1 rounded-full">
+                    {u.tag}
+                  </span>
+                  <h2 className="font-d font-extrabold text-2xl sm:text-3xl leading-tight mt-3">{u.name}</h2>
+                </div>
 
-                  <div className="relative mt-6 flex items-center justify-between">
-                    <span className={"inline-flex items-center gap-1.5 font-d font-bold text-sm px-4 py-2 rounded-full shadow-md transition " + u.pill}>
-                      {u.href.startsWith("https://wa.me/") ? "Abrir WhatsApp →" : "Acessar cardápio →"}
-                    </span>
-                  </div>
-                </button>
-              </Reveal>
-            );
-          })}
+                <div className="relative mt-6 grid grid-cols-2 gap-2">
+                  {u.actions.map((action) => (
+                    <a key={action.kind} href={action.href} target="_blank" rel="noopener noreferrer"
+                      onClick={() => setSelected(u.id)}
+                      className={"inline-flex min-h-[44px] items-center justify-center text-center font-d font-bold text-sm px-3 py-2 rounded-full shadow-md transition hover:-translate-y-0.5 active:scale-95 " + actionStyle(action.kind, u)}>
+                      {action.label} →
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
-
-        {toast && (
-          <div className="fixed left-1/2 -translate-x-1/2 bottom-20 sm:bottom-6 z-50 px-5 py-3 rounded-full bg-pz-b text-pz-y font-d font-bold text-sm shadow-2xl border-2 border-pz-y up whitespace-nowrap max-w-[92vw] truncate">
-            🍕 {toast}
-          </div>
-        )}
       </div>
     </section>
   );
